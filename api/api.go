@@ -10,6 +10,9 @@ import (
 )
 
 // GetRouter returns a root router for everything
+// HandleFunc method in Router requires a function in a form of 
+//	"func(http.ResponseWriter, *http.Request)" as the 2nd parameter.
+// so, healthcheckHandler, app.CommandHandler, and EventHandler should be written in that form.
 func GetRouter(app slack.App) *mux.Router {
 	r := mux.NewRouter()
 	r.HandleFunc("/healthcheck", healthcheckHandler).Methods("GET")
