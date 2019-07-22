@@ -37,9 +37,10 @@ func main() {
 
 	// http.ListenAndServe creates HTTP server
 	// 	- need to specify a port to listen to
-	//	- need to specify http.NewServeMux() instance to map current request to the designated route 
+	//	- need to specify Handler instance to map current request to the designated route 
 	// check api package in github.com/dl4ab/timebot/ for more details
-	// check more about it [https://golang.org/pkg/net/http/]
+	// check more about ListenAndServe [https://golang.org/pkg/net/http/]
+	// check more about Handler [https://golang.org/src/net/http/server.go?s=2736:2799#L75]
 	log.Printf("[MAIN] The server is running at 0.0.0.0:%v\n", port)
 	log.Println("[MAIN]", http.ListenAndServe(":"+port, api.GetRouter(app)))
 }
