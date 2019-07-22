@@ -11,6 +11,7 @@ import (
 
 // GetRouter returns a root router for everything
 func GetRouter(app slack.App) *mux.Router {
+	// create Router instance defined in github.com/gorilla/mux package
 	r := mux.NewRouter()
 	r.HandleFunc("/healthcheck", healthcheckHandler).Methods("GET")
 	// Handles a slash command "/time 2019-01-01 PST"
