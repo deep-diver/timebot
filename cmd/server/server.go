@@ -38,6 +38,8 @@ func main() {
 	// http.ListenAndServe creates HTTP server
 	// 	- need to specify a port to listen to
 	//	- need to specify Handler instance to map current request to the designated route 
+	//		- Handler is an interface to require ServeHTTP function to be implemented.
+	//		- any struct implementing ServeHTTP could be a kind of data type conforming to Handler interface
 	// check api package in github.com/dl4ab/timebot/ for more details
 	// check more about ListenAndServe [https://golang.org/pkg/net/http/]
 	// check more about Handler [https://golang.org/src/net/http/server.go?s=2736:2799#L75]
